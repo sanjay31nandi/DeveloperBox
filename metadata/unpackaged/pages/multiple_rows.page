@@ -1,0 +1,11 @@
+<apex:page controller="multiplerows" standardStylesheets="true" pageStyle="Account">
+  <apex:form >
+  <apex:dataTable value="{!l}" var="abc" id="temp">
+  <apex:column headerValue="input">
+  <apex:inputText value="{!s}"/>
+  </apex:column>
+  
+  </apex:dataTable>
+  <apex:commandButton value="add" action="{!addrow}" rendered="temp"/>
+  </apex:form>
+</apex:page>

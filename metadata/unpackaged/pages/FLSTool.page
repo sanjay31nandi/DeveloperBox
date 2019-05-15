@@ -1,0 +1,11 @@
+<apex:page controller="ctrlFLSTool" >
+   <apex:form >
+   <apex:pageBlock >
+   <apex:pageBlockTable value="{!objectNames}" var="a">
+   <apex:column value="{!a}"/>
+   
+   </apex:pageBlockTable>
+   </apex:pageBlock>
+  <apex:commandButton action="{!testin}" value="sanjay"/>
+  </apex:form>
+</apex:page>

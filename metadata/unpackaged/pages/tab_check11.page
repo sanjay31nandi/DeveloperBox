@@ -1,0 +1,18 @@
+<apex:page controller="Sample">
+<apex:form >
+   <apex:tabPanel id="theTabPanel" value="{!tabOpt}">
+        <apex:tab label="One" name="One" id="One">
+         <apex:inputText label="data" value="{!entereddata}"/>
+        <apex:inputField value="{!acc.name}"/>
+        <br/>
+        {!curencyBool}---{!hellorich}
+        <apex:commandButton value="Save hai" action="{!saveValue}"/>
+        </apex:tab>
+        <apex:tab label="Two" name="Two" id="Two">
+        
+        <apex:inputTextarea richText="true"  label="datat" value="{!hellorich}"/>
+        <apex:commandButton value="Go to Two" action="{!switch}"/></apex:tab>
+    </apex:tabPanel>
+    
+</apex:form>   
+</apex:page>

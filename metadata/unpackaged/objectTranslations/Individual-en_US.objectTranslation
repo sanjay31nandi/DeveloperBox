@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Name</value>
+        </caseValues>
+        <name>last_name_individual</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>MName</value>
+        </caseValues>
+        <name>middle_name_individual</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>AutoName</value>
+        </caseValues>
+        <name>name_individual</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Individuals --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Democheck --></label>
+        <name>Democheck__c</name>
+    </fields>
+    <fields>
+        <label><!-- SFAR --></label>
+        <name>SFAR__c</name>
+        <relationshipLabel><!-- Individuals --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Individual Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

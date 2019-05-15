@@ -1,0 +1,31 @@
+<apex:page standardController="Account" extensions="ctrlaccount">
+<script>
+function HUcomponent(){
+// work();
+}
+</script>
+ <apex:tabPanel immediate="false" switchType="client" selectedTab="Google" id="total"  >
+ <apex:tab label="GOogle" id="Google"  >
+ <apex:form >
+<apex:actionFunction name="work" action="{!valueupdate}" status="myStatus" reRender="total"/>
+ <apex:pageBlock >
+ <apex:pageBlockSection >
+ <apex:inputField value="{!acc.name}"/>
+ </apex:pageBlockSection>
+ </apex:pageBlock>
+ <apex:commandButton value="Save" action="{!savebutton}"/>
+ </apex:form>
+ </apex:tab>
+  <apex:tab label="Yahoo" id="Yahoo">
+  <apex:form >
+  <apex:pageBlock >
+ <apex:pageBlockSection >
+ <apex:inputField value="{!acc1.type}" />
+ </apex:pageBlockSection>
+ </apex:pageBlock>
+ <apex:commandButton value="Save Value" action="{!valueupdate}" reRender="total"/>
+ </apex:form>
+ </apex:tab>
+ </apex:tabPanel>
+ 
+</apex:page>

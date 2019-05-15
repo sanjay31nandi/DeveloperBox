@@ -1,0 +1,16 @@
+<apex:page controller="ctrlsajaytestmultiadd" >
+<apex:form >
+<apex:pageblock id="pb1">
+<apex:repeat value="{!products1}" var="product" id="theTable" >
+      
+   
+     <apex:inputfield value="{!product.prod.Product__c}" />
+     <apex:inputfield value="{!product.prod.Color__c}"/>
+     <apex:inputfield value="{!product.prod.Application__c}"/>
+    
+  
+    </apex:repeat>
+    </apex:pageblock>
+    
+    </apex:form>
+</apex:page>

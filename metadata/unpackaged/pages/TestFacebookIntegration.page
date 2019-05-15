@@ -1,0 +1,20 @@
+<apex:page controller="customControllerFacebook" >
+<apex:form >
+ <apex:pageBlock >
+ <apex:pageMessages />
+ <apex:pageBlockSection rendered="{!MessRender}" >
+  <apex:outputLabel style="font-weight: bold;"  >Enter Message: <br/><br/>
+ <apex:inputTextarea value="{!messagesCus}" cols="150" rows="5"/></apex:outputLabel>
+ 
+ </apex:pageBlockSection>
+ <Apex:pageBlockButtons location="top" > 
+  <apex:commandButton value="Connect To Facebook" action="{!calloutLogin}" rendered="{!!MessRender}" />
+ <apex:commandButton value="Post to Facebook" action="{!tryPosting}" rendered="{!MessRender}"/>
+ 
+ </Apex:pageBlockButtons>
+ </apex:pageBlock>
+
+ 
+ 
+  </apex:form>
+</apex:page>

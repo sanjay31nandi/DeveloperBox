@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>Update_Value</name>
+        <label>Update Value</label>
+        <locationX>688</locationX>
+        <locationY>278</locationY>
+        <assignmentItems>
+            <assignToReference>UserObject.T_C__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_User</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Terms_validation</name>
+        <label>Terms validation</label>
+        <locationX>459</locationX>
+        <locationY>127</locationY>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Terms_Not_Checked</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>UserObject.T_C__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_T_C</targetReference>
+            </connector>
+            <label>Terms Not Checked</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>CurrentUserID</name>
+        <dataType>String</dataType>
+        <expression>{!$User.Id}</expression>
+    </formulas>
+    <interviewLabel>Demo Flo {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Demo Flo</label>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>Get_User_Info</name>
+        <label>Get User Info</label>
+        <locationX>166</locationX>
+        <locationY>117</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Terms_validation</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>CurrentUserID</elementReference>
+            </value>
+        </filters>
+        <object>User</object>
+        <outputReference>UserObject</outputReference>
+        <queriedFields>T_C__c</queriedFields>
+        <queriedFields>Name</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_User</name>
+        <label>Update User</label>
+        <locationX>464</locationX>
+        <locationY>394</locationY>
+        <inputReference>UserObject</inputReference>
+    </recordUpdates>
+    <screens>
+        <name>Check_T_C</name>
+        <label>Check T&amp;C</label>
+        <locationX>467</locationX>
+        <locationY>276</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Update_Value</targetReference>
+        </connector>
+        <fields>
+            <name>Sampletext</name>
+            <fieldText>Sample text</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Agree</name>
+            <dataType>Boolean</dataType>
+            <fieldText>I Agree</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <fields>
+            <name>Agrred</name>
+            <dataType>Boolean</dataType>
+            <defaultValue>
+                <elementReference>UserObject.T_C__c</elementReference>
+            </defaultValue>
+            <fieldText>Agrred</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>Get_User_Info</startElementReference>
+    <variables>
+        <name>LoginFlow_UserId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>UserObject</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>User</objectType>
+    </variables>
+</Flow>

@@ -1,0 +1,41 @@
+<apex:page sidebar="false"  showHeader="false" standardcontroller="opportunity"  extensions="search" >
+<apex:form >
+<apex:inputField value="{!opportunity.Name}"/>
+<apex:commandButton action="{!searchdata1}" value="Search"/ >
+<apex:dataTable value="{!sanjay1}" var="ite" border="2" rendered="{!a}">
+<apex:column ><apex:facet name="header">Name</apex:facet>
+   <apex:commandLink value="{!ite.name}" action="{!searchdata}" title="to get more information about this product, click on this">
+   <apex:param value="{!ite.id}" assignTo="{!accountid}"  name="AccountID"/>
+   </apex:commandLink>
+</apex:column>
+</apex:dataTable>
+<apex:dataTable value="{!sanjay}" var="ite1" border="2" rendered="{!a1}">
+<apex:column >
+<apex:facet name="header">Name</apex:facet>
+   <apex:outputText value="{!ite1.name}">
+   </apex:outputText>
+</apex:column>
+<apex:column >
+<apex:facet name="header">Stage Name</apex:facet>
+   <apex:outputText value="{!ite1.StageName}">
+   </apex:outputText>
+</apex:column>
+<apex:column >
+<apex:facet name="header">Close Date</apex:facet>
+   <apex:outputText value="{!ite1.CloseDate}">
+   </apex:outputText>
+</apex:column>
+<apex:column >
+<apex:facet name="header">Type</apex:facet>
+   <apex:outputText value="{!ite1.Type}">
+   </apex:outputText>
+</apex:column>
+<apex:column >
+<apex:facet name="header">Description </apex:facet>
+   <apex:outputText value="{!ite1.Description }">
+   </apex:outputText>
+</apex:column>
+</apex:dataTable>
+
+</apex:form>
+</apex:page>

@@ -1,0 +1,7 @@
+<apex:page controller="ctrldemoOdataStimulator">
+<flow:interview name="New_Customer_Flow" />
+<apex:form id="abc" >
+<apex:outputText >{!result}</apex:outputText><br/><br/>
+<apex:commandButton action="{!testDataConnection}" value="submit" reRender="abc"/>
+</apex:form>
+</apex:page>

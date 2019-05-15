@@ -1,0 +1,5 @@
+<apex:page standardController="SFAR__c" renderAs="pdf">
+<apex:form >
+  <apex:inputField value="{!SFAR__c.Terms_and_Condition__c}"/>
+  </apex:form>
+</apex:page>

@@ -1,0 +1,75 @@
+<apex:page controller="ctrlPermissionSetCloning" sidebar="False">
+<apex:outputPanel id="op6" >
+<apex:pageMessages >
+</apex:pageMessages></apex:outputPanel>
+ <apex:form title="Cloning">
+     <apex:pageBlock title="Cloning Permission Set and Profile">
+         <apex:pageBlockSection title="Selection" > 
+             <apex:selectRadio value="{!processSelectedOption}" layout="pageDirection">
+                        <apex:selectOptions value="{!FromToCloning}">
+                        </apex:selectOptions>
+                        <apex:actionSupport event="onchange" action="{!testing}" reRender="op2,op1,op3,op4,op6,op7"/>
+             </apex:selectRadio>
+         </apex:pageBlockSection>
+        <apex:outputPanel id="op1">
+        <apex:pageBlockSection columns="1" title="Operation To be Perfomed" rendered="{!section1}" > 
+         
+         <apex:inputcheckbox value="{!objSetReq}" title="Object Setting" label="Object Setting"> 
+         <apex:actionSupport event="onchange" action="{!testing}" reRender="op4,op5,op6,op7"/>
+         </apex:inputCheckbox>
+         <apex:inputcheckbox value="{!fldSetReq}" title="Object Setting" label="Field Level Setting"> 
+         <apex:actionSupport event="onchange" action="{!testing}" reRender="op4,op5,op6,op7"/>
+         </apex:inputCheckbox>
+         <apex:inputcheckbox value="{!classPageReq}" title="Object Setting" label="Pages & Classes"> 
+          <apex:actionSupport event="onchange" action="{!testing}" reRender="op5,op6,op7"/>
+         </apex:inputCheckbox>
+         </apex:pageBlockSection>
+         </apex:outputPanel>
+         <apex:outputPanel id="op2">
+         <apex:pageBlockSection id="PermToPro" title="Profile to Permission Set" columns="2" rendered="{!section2}">
+         <apex:outputLabel title="Profile" value="Profile">&nbsp;&nbsp;&nbsp;
+         <apex:selectlist value="{!profileselected}" size="1">
+                        <apex:selectOptions value="{!profileselectOption}"/>
+             </apex:selectlist>
+            </apex:outputLabel>
+            <apex:outputLabel title="Permission Set" value="Permission Set">&nbsp;&nbsp;&nbsp;
+         <apex:selectlist value="{!permissionsetBselected}" size="1">
+                        <apex:selectOptions value="{!permissionsetselectOption}"/>
+             </apex:selectlist>
+            </apex:outputLabel>
+         </apex:pageBlockSection>
+         </apex:outputPanel>
+         <apex:outputPanel id="op3">
+          <apex:pageBlockSection id="ProToPro" title="Permission Set to Permission Set" rendered="{!section3}">
+         <apex:outputLabel title="Permissions Set A" value="Permission Set">&nbsp;&nbsp;&nbsp;
+         <apex:selectlist value="{!permissionsetAselected}" size="1">
+                        <apex:selectOptions value="{!permissionsetselectOption}"/>
+             </apex:selectlist>
+            </apex:outputLabel>
+            <apex:outputLabel title="Permission Set B" value="Permission Set">&nbsp;&nbsp;&nbsp;
+         <apex:selectlist value="{!permissionsetBselected}" size="1">
+                        <apex:selectOptions value="{!permissionsetselectOption}"/>
+             </apex:selectlist>
+            </apex:outputLabel>
+         </apex:pageBlockSection>
+         </apex:outputPanel>
+          <apex:outputPanel id="op4">
+          <apex:pageBlockSection id="ObjectSelectionScreen" title="Object Selection Screen"  rendered="{!section4}">
+          <c:MultiselectPicklist leftLabel="Object Available"
+                leftOptions="{!allObjects}"
+                rightLabel="object Selected"
+                rightOptions="{!selectedObjects }"
+                size="10"
+                width="550px" />
+
+          
+         </apex:pageBlockSection>
+          </apex:outputPanel>
+           <apex:outputPanel id="op5">
+       <center>  <apex:commandButton action="{!Cloning}" value="Clone" reRender="op6,op7" />
+       <apex:commandButton value="Cancel" action="{!cancel}" reRender="op6,op7" />
+       </center>
+       </apex:outputPanel>
+     </apex:pageBlock>
+ </apex:form> 
+</apex:page>

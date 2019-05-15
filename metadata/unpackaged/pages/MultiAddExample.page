@@ -1,0 +1,38 @@
+<apex:page controller="ManageListController" tabstyle="Account">
+ <apex:form >
+   <apex:pageBlock title="Bulk Account Create">
+   
+      <apex:pageBlockTable value="{!wrappers}" var="wrapper" id="wtable">
+      <apex:column headerValue="Size"> <apex:outputText value="{!size}">size is</apex:outputText></apex:column>
+         <apex:column headerValue="Ident">
+            <apex:outputText value="{!wrapper.ident}"/>
+         </apex:column>
+         <apex:column headerValue="Name">
+            <apex:inputText value="{!wrapper.acc}"/>
+         </apex:column>
+         <apex:column headerValue="Parent">
+            <apex:inputText value="{!wrapper.acc1}"/>
+         </apex:column>
+         <apex:column headerValue="Industry">
+            <apex:inputText value="{!wrapper.acc2}"/>
+         </apex:column>
+         <apex:column headerValue="test">
+         <apex:outputText value="{!wrapper.finalvalue}" rendered="{!ab}"></apex:outputText>
+          </apex:column>
+
+         <apex:column headerValue="Action">
+            <apex:commandButton value="Delete" action="{!delWrapper}" rerender="wtable">
+               <apex:param name="toDelIdent" value="{!wrapper.ident}" assignTo="{!toDelIdent}"/>
+            </apex:commandButton>
+         </apex:column>
+      </apex:pageBlockTable>
+      <apex:commandButton value="Add Row" action="{!addRows}" rerender="wtable">
+         <apex:param name="addCount" value="1" assignTo="{!addCount}"/>
+         <apex:commandButton value="save" action="{!save}"/>
+      </apex:commandButton>
+         </apex:pageBlock>
+          <apex:outputText value="{!a}" rendered="{!ab}"></apex:outputText>
+         
+
+ </apex:form>
+</apex:page>

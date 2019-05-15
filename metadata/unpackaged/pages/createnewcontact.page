@@ -1,0 +1,10 @@
+<apex:page standardcontroller="SFAR__c" extensions="createnewcontact" action="{!deactivate}">
+<apex:form >
+<apex:pageBlock >
+<apex:pageBlockSection columns="2">
+<apex:outputText value="{!name}">The User Deactiavted is :</apex:outputText> 
+<apex:commandButton value="transferRecords" action="{!transferRecords}"/>
+</apex:pageBlockSection>
+</apex:pageBlock>
+</apex:form>  
+</apex:page>

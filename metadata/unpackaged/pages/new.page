@@ -1,0 +1,7 @@
+<apex:page standardController="Case" extensions="createedit">
+<apex:form >
+<apex:pageBlock >
+<apex:commandButton value="New" action="{!newmethod}" style="align:center"/>
+</apex:pageBlock>
+</apex:form>
+</apex:page>

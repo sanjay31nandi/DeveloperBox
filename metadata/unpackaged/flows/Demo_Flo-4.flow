@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assignments>
+        <name>Update_Value</name>
+        <label>Update Value</label>
+        <locationX>465</locationX>
+        <locationY>277</locationY>
+        <assignmentItems>
+            <assignToReference>UserObject.T_C__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_User</targetReference>
+        </connector>
+    </assignments>
+    <decisions>
+        <name>Terms_validation</name>
+        <label>Terms validation</label>
+        <locationX>472</locationX>
+        <locationY>110</locationY>
+        <defaultConnectorLabel>[Default Outcome]</defaultConnectorLabel>
+        <rules>
+            <name>Terms_Not_Checked</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>UserObject.T_C__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_T_C</targetReference>
+            </connector>
+            <label>Terms Not Checked</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>CurrentUserID</name>
+        <dataType>String</dataType>
+        <expression>{!$User.Id}</expression>
+    </formulas>
+    <interviewLabel>Demo Flo3 {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Demo Flo3</label>
+    <processType>Flow</processType>
+    <recordLookups>
+        <name>Get_User_Info</name>
+        <label>Get User Info</label>
+        <locationX>163</locationX>
+        <locationY>112</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Terms_validation</targetReference>
+        </connector>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>CurrentUserID</elementReference>
+            </value>
+        </filters>
+        <object>User</object>
+        <outputReference>UserObject</outputReference>
+        <queriedFields>T_C__c</queriedFields>
+        <queriedFields>Name</queriedFields>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_User</name>
+        <label>Update User</label>
+        <locationX>162</locationX>
+        <locationY>276</locationY>
+        <inputReference>UserObject</inputReference>
+    </recordUpdates>
+    <screens>
+        <name>Check_T_C</name>
+        <label>Check T&amp;C</label>
+        <locationX>803</locationX>
+        <locationY>110</locationY>
+        <allowBack>true</allowBack>
+        <allowFinish>true</allowFinish>
+        <allowPause>true</allowPause>
+        <connector>
+            <targetReference>Update_Value</targetReference>
+        </connector>
+        <fields>
+            <name>Header</name>
+            <fieldText>&lt;SPAN ALIGN=&quot;LEFT&quot;&gt;&lt;FONT FACE=&quot;Arial&quot; STYLE=&quot;font-size:12px&quot; COLOR=&quot;#000000&quot; LETTERSPACING=&quot;0&quot; KERNING=&quot;0&quot;&gt;&lt;B&gt;Terms and Condition:&lt;/B&gt;&lt;/FONT&gt;&lt;/SPAN&gt;</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Sampletext</name>
+            <fieldText>1.    The terms and conditions of the deputation are subject to applicable laws and hence may be altered or
+modified in order to facilitate compliance with the same.
+2.   The terms and conditions of your deputation continue to be governed by the terms and conditions of</fieldText>
+            <fieldType>DisplayText</fieldType>
+        </fields>
+        <fields>
+            <name>Agrred</name>
+            <dataType>Boolean</dataType>
+            <defaultValue>
+                <elementReference>UserObject.T_C__c</elementReference>
+            </defaultValue>
+            <fieldText>I Agree</fieldText>
+            <fieldType>InputField</fieldType>
+            <isRequired>true</isRequired>
+            <validationRule>
+                <errorMessage>Please read all terms and conditions carefully and select I agree to proceed.</errorMessage>
+                <formulaExpression>{!Agrred}</formulaExpression>
+            </validationRule>
+        </fields>
+        <showFooter>true</showFooter>
+        <showHeader>true</showHeader>
+    </screens>
+    <startElementReference>Get_User_Info</startElementReference>
+    <variables>
+        <name>LoginFlow_UserId</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>UserObject</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>User</objectType>
+    </variables>
+</Flow>

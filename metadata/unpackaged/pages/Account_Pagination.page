@@ -1,0 +1,21 @@
+<apex:page standardController="Account" extensions="ctrlsanjayPaginate">
+ <apex:form id="frm1">
+ 
+ <apex:pageBlock title="View Account" rendered="{!displaylist.size!=0}" id="frm">
+ <apex:pageBlockSection columns="1">
+ <apex:pageBlockTable value="{!displaylist}" var="a" width="100%">
+ <apex:column value="{!a.name}"/> 
+ <apex:column value="{!a.createddate}"/> 
+ <apex:column value="{!a.AccountNumber__c}"/> 
+ </apex:pageBlockTable>
+ </apex:pageBlockSection>
+
+ <apex:pageblockButtons >
+ <apex:commandButton value="First" action="{!first}" reRender="frm" disabled="{!first}"/>
+ <apex:commandButton value="Previous" action="{!previous}" reRender="frm" disabled="{!previous}"/>
+ <apex:commandButton value="Next"  disabled="{!next}" reRender="frm" action="{!next}"/>
+ <apex:commandButton value="Last" disabled="{!last}" reRender="frm" action="{!last}"/>
+ </apex:pageblockButtons>
+ </apex:pageBlock>
+ </apex:form>
+</apex:page>

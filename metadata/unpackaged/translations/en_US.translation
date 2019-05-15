@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customApplications>
+        <label><!-- Conference --></label>
+        <name>Conference</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Console App --></label>
+        <name>Console_App</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Delivery Tracker --></label>
+        <name>Delivery_Tracker</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Garage --></label>
+        <name>Garage</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- New Millennium Delivery --></label>
+        <name>New_Millennium_Delivery</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Recruiting --></label>
+        <name>Recruiting</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Relaxation Gauntlet Lightning --></label>
+        <name>Relaxation_Gauntlet_Lightning</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- Suggestion Box --></label>
+        <name>Suggestion_Box</name>
+    </customApplications>
+    <customApplications>
+        <label><!-- lightningPageFirst --></label>
+        <name>lightningPageFirst</name>
+    </customApplications>
+    <customLabels>
+        <label><!-- Inventory Level Low --></label>
+        <name>Inventory_Level_Low</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Select One --></label>
+        <name>Select_One</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- tewstsdfa --></label>
+        <name>tewstsdfa</name>
+    </customLabels>
+    <customTabs>
+        <label><!-- Contact List --></label>
+        <name>Contact_List</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- First Lighting --></label>
+        <name>First_Lighting</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- Friends with Boats --></label>
+        <name>Friends_with_Boats</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- demo --></label>
+        <name>demo</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- demo_1 --></label>
+        <name>demo_1</name>
+    </customTabs>
+    <flowDefinitions>
+        <flows>
+            <choices>
+                <name>AssemblySystem</name>
+            </choices>
+            <choices>
+                <name>CloudyBot</name>
+            </choices>
+            <choices>
+                <name>RainbowBot</name>
+            </choices>
+            <fullName>Product_Quick_Search-1</fullName>
+            <screens>
+                <fields>
+                    <name>Product</name>
+                </fields>
+                <name>Show_Product</name>
+            </screens>
+            <screens>
+                <fields>
+                    <name>ProductType</name>
+                </fields>
+                <name>Search_Product</name>
+            </screens>
+        </flows>
+        <fullName>Product_Quick_Search</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>New_Customer_Flow-1</fullName>
+            <screens>
+                <fields>
+                    <name>Company_Name</name>
+                </fields>
+                <fields>
+                    <name>First_Name</name>
+                </fields>
+                <fields>
+                    <name>Last_Name</name>
+                </fields>
+                <fields>
+                    <name>Opportunity_Amount</name>
+                </fields>
+                <name>New_Customer_Flow</name>
+            </screens>
+        </flows>
+        <fullName>New_Customer_Flow</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>Demo_Flo-2</fullName>
+            <screens>
+                <fields>
+                    <name>Agrred</name>
+                    <validationRule/>
+                </fields>
+                <fields>
+                    <name>Sampletext</name>
+                </fields>
+                <name>Check_T_C</name>
+            </screens>
+        </flows>
+        <flows>
+            <fullName>Demo_Flo-4</fullName>
+            <screens>
+                <fields>
+                    <name>Agrred</name>
+                    <validationRule/>
+                </fields>
+                <fields>
+                    <name>Header</name>
+                </fields>
+                <fields>
+                    <name>Sampletext</name>
+                </fields>
+                <name>Check_T_C</name>
+            </screens>
+        </flows>
+        <flows>
+            <fullName>Demo_Flo-5</fullName>
+            <screens>
+                <fields>
+                    <name>Agrred</name>
+                    <validationRule/>
+                </fields>
+                <fields>
+                    <name>Header</name>
+                </fields>
+                <fields>
+                    <name>Sampletext</name>
+                </fields>
+                <name>Check_T_C</name>
+            </screens>
+        </flows>
+        <flows>
+            <fullName>Demo_Flo-1</fullName>
+            <screens>
+                <fields>
+                    <name>Agree</name>
+                </fields>
+                <fields>
+                    <name>Agrred</name>
+                </fields>
+                <fields>
+                    <name>Sampletext</name>
+                </fields>
+                <name>Check_T_C</name>
+            </screens>
+        </flows>
+        <flows>
+            <fullName>Demo_Flo-3</fullName>
+            <screens>
+                <fields>
+                    <name>Agrred</name>
+                    <validationRule/>
+                </fields>
+                <fields>
+                    <name>Header</name>
+                </fields>
+                <fields>
+                    <name>Sampletext</name>
+                </fields>
+                <name>Check_T_C</name>
+            </screens>
+        </flows>
+        <flows>
+            <fullName>Demo_Flo-6</fullName>
+            <screens>
+                <fields>
+                    <name>Agrred</name>
+                    <validationRule/>
+                </fields>
+                <fields>
+                    <name>Header</name>
+                </fields>
+                <fields>
+                    <name>Sampletext</name>
+                </fields>
+                <name>Check_T_C</name>
+            </screens>
+        </flows>
+        <fullName>Demo_Flo</fullName>
+    </flowDefinitions>
+    <flowDefinitions>
+        <flows>
+            <fullName>Test_flow-1</fullName>
+            <screens>
+                <fields>
+                    <name>Email</name>
+                </fields>
+                <fields>
+                    <name>Last_name</name>
+                </fields>
+                <name>Data_Insertion</name>
+            </screens>
+        </flows>
+        <fullName>Test_flow</fullName>
+    </flowDefinitions>
+    <quickActions>
+        <label><!-- LogACall --></label>
+        <name>LogACall</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewAccount --></label>
+        <name>NewAccount</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewCase --></label>
+        <name>NewCase</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewContact --></label>
+        <name>NewContact</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewEvent --></label>
+        <name>NewEvent</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewGroup --></label>
+        <name>NewGroup</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewLead --></label>
+        <name>NewLead</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewNote --></label>
+        <name>NewNote</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewOpportunity --></label>
+        <name>NewOpportunity</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewTask --></label>
+        <name>NewTask</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- New Detailed Account --></label>
+        <name>New_Detailed_Account</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- SendEmail --></label>
+        <name>SendEmail</name>
+    </quickActions>
+    <reportTypes>
+        <description><!-- Account with contact and hobbies --></description>
+        <label><!-- Account with contact and hobbies --></label>
+        <name>Account_with_contact_and_hobbies</name>
+        <sections>
+            <label><!-- Accounts --></label>
+            <name>Accounts</name>
+        </sections>
+        <sections>
+            <label><!-- Contacts --></label>
+            <name>Contacts</name>
+        </sections>
+    </reportTypes>
+</Translations>
